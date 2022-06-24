@@ -1,0 +1,152 @@
+<%- include("./layouts/header"); -%>
+    <div class="container  mt-4 register">
+        <form method="post" action="/detail/addmoreinformation" class="needs-validation" enctype="multipart/form-data"
+            nonvalidate>
+
+            <div class="form-group mb-3">
+                <label for="age" class="form-label">Age</label>
+                <input type="number" name="age" class="form-control" id="age" placeholder="Age" size="3" maxlength="3"
+                    required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="classofs" class="form-label">Choose your class:</label>
+                <select name="classofs" id="classofs">
+                    <option value="First">first</option>
+                    <option value="Second">second</option>
+                    <option value="Third">third</option>
+                    <option value="Fourth">fourth</option>
+                    <option value="Fifth">fifth</option>
+                    <option value="Sixth">sixth</option>
+                    <option value="Seventh">seventh</option>
+                    <option value="Eighth">Eighth</option>
+                    <option value="Ninth">Ninth</option>
+                    <option value="Tenth">Tenth</option>
+                </select>
+            </div>
+            <div class="form-group mb-3">
+                <label for="gender" class="form-label">Gender</label><br>
+                <input type="radio" name="gender" id="gender" value="male" class="" style="margin-left: 10px;">
+                Male
+                <input type="radio" name="gender" id="gender" value="Female" class="" style="margin-left: 10px;">
+                Female
+                <input type="radio" name="gender" id="gender" value="other" class="" style="margin-left: 10px;">
+                Prefer not to say
+            </div>
+            <div class="form-group mb-3 mt-3">
+                <label for="birthday" class="form-label">Date of Birth</label>
+                <input type="date" class="form-control" id="birthday" name="birthday" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" name="address" id="address" placeholder="address" class="form-control" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+
+            <div class="form-group mb-3">
+                <label for="mobno" class="form-label"> Contact Number </label><br>
+                <input type="tel" name="mobno" id="mobno" placeholder="e.g : 1231234123" pattern="[0-9]{10}"
+                    maxlength="12" class="form-control" required />
+
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="image">Image</label>
+                <input type="file" class="form-control" name="image" id="img">
+            </div>
+            <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Add
+                Detail</button>
+
+        </form>
+    </div>
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered " role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Hi, <%=name%>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Do you want to payment now?</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        onClick="JavaScript:radio_input('detail')">Not Now</button>
+                    <!-- <button type="button" class="btn btn-primary" onClick="JavaScript:radio_inputs()">Pay Now</button> -->
+                    <form action="/pay" method="post">
+                        <input type="submit" value="Yes">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        (function () {
+            'use strict'
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        event.preventDefault();
+                        fun(event);
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+
+
+                    }, false)
+                })
+
+
+
+
+        })()
+
+        function fun(e) {
+
+            var form = document.querySelector('form')
+            console.log(new FormData(form));
+            return fetch("/detail/addmoreinformation", {
+                method: 'POST',
+                body: new FormData(form),
+            })
+
+                .then(response => response.json())
+                .then(json => console.log(json))
+                .catch((e) => console.log(e));
+        }
+
+
+        function radio_input(url) {
+            window.location.href = 'http://localhost:3000/' + url
+        }
+
+    </script>
+
+    <%- include("./layouts/footer"); -%>

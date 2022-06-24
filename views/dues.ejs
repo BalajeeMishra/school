@@ -1,0 +1,55 @@
+<%- include("./layouts/header"); -%>
+
+    <table class="table table-striped alignmiddle">
+        <thead>
+            <tr>
+                <th>Month</th>
+                <th>Fees</th>
+                <th>paid</th>
+                <th>Dues</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% if(monthbynum<=3){ %>
+                <% for(let i=0;i<3;i++) {%>
+                    <tr>
+                        <td>
+                            <%=month[i] %>
+                        </td>
+                        <td>
+                            <%=dues.feesDetail[0].yourmonthlyfees %>
+                        </td>
+                        <td>
+                            <%=dues.feesDetail[0].paided %>
+                        </td>
+                        <td>
+                            <%=dues.feesDetail[0].dues %>
+                        </td>
+                    </tr>
+                    <% } %>
+                        <% }else{ %>
+                            <% for(let i=2;i<=monthbynum-1;i++) {%>
+
+                                <tr>
+                                    <td>
+                                        <%=month[i] %>
+                                    </td>
+                                    <td>
+                                        <%=dues.feesDetail[0].yourmonthlyfees %>
+                                    </td>
+                                    <td>
+                                        <%=dues.feesDetail[0].paided %>
+                                    </td>
+                                    <td>
+                                        <%=dues.feesDetail[0].dues %>
+                                    </td>
+                                </tr>
+                                <% } %>
+                                    <% } %>
+                                        </tr>
+        </tbody>
+
+    </table>
+
+    <%- include("./layouts/footer"); -%>

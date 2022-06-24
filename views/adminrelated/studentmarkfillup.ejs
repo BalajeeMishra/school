@@ -1,0 +1,49 @@
+<%- include("../layouts/header"); -%>
+    <h1>hello world ...</h1>
+    <div class="container  mt-4 register">
+        <form method="post" action="/result/markfillup/<%=id%> " class="needs-validation" nonvalidate>
+
+            <div class="form-group mb-3">
+                <label for="math" class="form-label">Mathematics</label>
+                <input type="number" name="math" class="form-control" id="math" placeholder="Mathematics" required>
+                <div class="valid-feedback">
+                    Looks good!s
+                </div>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="science" class="form-label">science</label>
+                <input type="number" name="science" class="form-control" id="science" placeholder="science-mark"
+                    required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="english" class="form-label">English</label>
+                <input type="number" name="English" class="form-control" id="English" placeholder="English-mark"
+                    required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="sst" class="form-label">sst</label>
+                <input type="number" name="sst" class="form-control" id="sst" placeholder="sst-mark" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="hindi" class="form-label">Hindi</label>
+                <input type="number" name="hindi" class="form-control" id="hindi" placeholder="Hindi-mark" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success">Add Detail</button>
+
+
+        </form>
+        <%- include("../layouts/footer"); -%>

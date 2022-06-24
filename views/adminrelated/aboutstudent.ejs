@@ -1,0 +1,48 @@
+<%- include("../adminlayout/admin_header"); -%>
+
+    <table class="table table-striped alignmiddle">
+        <thead>
+            <tr>
+                <th>Roll-Number</th>
+                <th>Student-Name</th>
+                <th>Result Status</th>
+            </tr>
+        </thead>
+        <% if(selected_student) {%>
+            <tbody>
+
+                <% selected_student.forEach((e,j)=>{%>
+                    <tr>
+                        <td>
+                            <%=j%>
+                        </td>
+                        <td>
+                            <%=e.name%>
+                        </td>
+
+                        <% if(e.resultShow){ %>
+                            <td>
+                                <a class="btn btn-success" href="/resultpublish/<%=e.userId%>">Uploaded</a>
+                            </td>
+                            <% } else{ %>
+
+                                <td>
+                                    <a class="btn btn-info" href="/result/markfillup/<%=e.userId%>">Add</a>
+                                </td>
+                                <% } %>
+                                    <td>
+                                        <a class="btn btn-danger" href="/result/delete-result/<%=e.userId%>">Delete</a>
+                                    </td>
+
+                                    <td>
+                                        <a class="btn btn-info" href="/dues/detail">Dues Detail</a>
+                                    </td>
+
+
+                    </tr>
+                    <%}) %>
+            </tbody>
+            <% } %>
+    </table>
+
+    <%- include("../adminlayout/admin_footer"); -%>

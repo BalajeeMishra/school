@@ -1,0 +1,37 @@
+<%- include("./layouts/header"); -%>
+    <% if(typeof user !='undefined' ) {%>
+        <div class="center" style="margin: auto; font-size:larger;color: aliceblue;">
+            <h3 class="mt-5 mb-5 text-center">welcome here <%=user.name %>
+            </h3>
+        </div>
+        <div class="cards">
+            <form method="post" action="/detail/addmoreinformation">
+
+                <label for="dashboard" class="form-label">What are you looking for?</label><br>
+                <div class="horizontal">
+                    <div>
+                        <input type="radio" name="same" id="dashboard" value="admission" class=""
+                            style="margin-left: 10px;" onClick="JavaScript:radio_input('detail/addmoreinformation')">
+                        Admission
+                    </div>
+                    <div>
+                        <input type="radio" name="same" id="dashboard" value="result" class=""
+                            style="margin-left: 10px;" onClick="JavaScript:radio_inputs('resultpublish')">
+                        Result
+                    </div>
+                    <div>
+                        <input type="radio" name="same" id="dashboard" value="dues" class="" style="margin-left: 10px;">
+                        Dues
+                    </div>
+
+                </div>
+        </div>
+
+        <% } %>
+            <script>
+                function radio_input(url) {
+                    // Re-direct the browser to the url value
+                    window.location.href = 'http://localhost:3000/' + url
+                }
+            </script>
+            <%- include("./layouts/footer"); -%>

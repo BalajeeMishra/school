@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;500&display=swap");
+.nav-style {
+  font-weight: bold;
+
+  background-color: #939df7 !important;
+}
+div.header-text a {
+  color: #480bf4 !important;
+  font-weight: bolder;
+}
+.register {
+  width: 50% !important;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.cards {
+  width: 30%;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin: auto;
+  font-size: larger;
+  font-weight: 900;
+}
+.horizontal {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 576px) {
+  .register {
+    width: 80% !important;
+    margin: auto;
+  }
+}
+body {
+  background-color: rgba(127, 210, 10, 0.671);
+}
+.payment {
+  width: 300px;
+  height: 350px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(9.5px);
+  -webkit-backdrop-filter: blur(9.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin: auto;
+  margin-top: 30px;
+}

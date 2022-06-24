@@ -1,0 +1,32 @@
+<%- include("../adminlayout/admin_header"); -%>
+    <div class="center text-center">
+        <h1>Here is detail of registration...</h1>
+    </div>
+    <table class="table table-striped alignmiddle">
+        <thead>
+            <tr>
+                <th>student name</th>
+                <th>mobile number</th>
+                <th>Registration Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% totalRegistration.forEach(e=> {%>
+                <tr>
+                    <td>
+                        <%=e.name %>
+                    </td>
+                    <td>
+                        <%=e.mobno %>
+                    </td>
+                    <% if(e.status==true){ %>
+                        <td>Yes</td>
+                        <% } else{%>
+                            <td>No</td>
+                            <% } %>
+                </tr>
+                <% }); %>
+        </tbody>
+
+    </table>
+    <%- include("../adminlayout/admin_footer"); -%>

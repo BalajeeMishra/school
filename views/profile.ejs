@@ -1,0 +1,33 @@
+<%- include("./layouts/header"); -%>
+
+    <div class="student-detail">
+        <p>
+            <%=userData.name %>
+        </p>
+        <p>
+            <%=userData.email %>
+        </p>
+        <p>
+            <%=userData.gender %>
+        </p>
+        <p>
+            <%=detailData.class %>
+        </p>
+        <p>
+            <%=detailData.age%>
+        </p>
+        <p>
+            <%=detailData.address %>
+        </p>
+        <p>
+            <%=detailData.birthday %>
+        </p>
+        <p>
+            <%=detailData.classofs %>
+        </p>
+        <p>
+            <%=detailData.mobno %>
+        </p>
+        <img src="<%=detailData.images.url %> " </div>
+
+        <%- include("./layouts/footer"); -%>

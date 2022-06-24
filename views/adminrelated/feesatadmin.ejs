@@ -1,0 +1,18 @@
+<%- include("../adminlayout/admin_header"); -%>
+    <div>
+        <h3 class="text-center">
+            Fees submission at admin section
+        </h3>
+        <div class="container  mt-4 register">
+            <form method="post" action="/payment/entered_detail">
+                <div class="form-group mb-3">
+                    <label for="registrationNumber" class="form-label">Registration number</label>
+                    <input type="text" name="registrationNumber" class="form-control" id="registrationNumber"
+                        placeholder="Registration Number" required>
+
+                </div>
+                <button type="submit" class="btn btn-success">submit detail</button>
+        </div>
+    </div>
+
+    <%- include("../adminlayout/admin_footer"); -%>

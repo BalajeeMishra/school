@@ -1,0 +1,26 @@
+<%- include("../adminlayout/admin_header"); -%>
+    <div>
+        <h1>Enter student detail</h1>
+        <!-- Example single danger button -->
+        <form method="post" action="/result/student">
+            <div class="form-group mb-3">
+                <label for="classofs" class="form-label">Choose your class:</label>
+                <select name="classofs" id="classofs">
+                    <option value="First">first</option>
+                    <option value="Second">second</option>
+                    <option value="Third">third</option>
+                    <option value="Fourth">fourth</option>
+                    <option value="Fifth">fifth</option>
+                    <option value="Sixth">sixth</option>
+                    <option value="Seventh">seventh</option>
+                    <option value="Eighth">Eighth</option>
+                    <option value="Ninth">Ninth</option>
+                    <option value="Tenth">Tenth</option>
+                </select>
+            </div>
+
+            <button type="submit">done</button>
+        </form>
+
+    </div>
+    <%- include("../adminlayout/admin_footer"); -%>
