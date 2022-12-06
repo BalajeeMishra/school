@@ -30,7 +30,8 @@ router.get("/detail", async (req, res) => {
 // /dues/all route for managing dues after registration
 router.get("/all", async (req, res) => {
   const count = req.session.count;
-  const nameDetail = await Detail.find({ userId: req.user._id });
+  console.log(req?.user);
+  const nameDetail = await Detail.find({ userId: req.user?._id });
 
   if (typeof nameDetail[0] == "undefined") {
     return res.send("first do your registration");
