@@ -33,8 +33,9 @@ var razorpay = new Razorpay({
 //amount to pay
 router.post("/order", async (req, res) => {
   const { data } = req.body;
+  // amount: data.paided,
   var options = {
-    amount: data.paided, // amount in the smallest currency unit
+    amount: "20", // amount in the smallest currency unit
     currency: "INR",
   };
   razorpay.orders.create(options, (err, order) => {

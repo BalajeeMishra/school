@@ -101,7 +101,7 @@ router.post(
         return res.render("register", { name, email, password, password });
       }
 
-      const user = new User({ name, username: email, email });
+      const user = new User({ name, username: email, email, admin: true });
       const registeredUser = await User.register(user, password);
 
       if (typeof registeredUser != "undefined") {

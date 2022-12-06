@@ -23,11 +23,11 @@ const payments = require("./routes/payments");
 const feesofstudent = require("./routes/feesofstudent");
 const registration = require("./routes/registration");
 const Admin = require("./routes/admincontrol");
-
+const dbUrl = process.env.DBURL || "mongodb://localhost:27017/school";
 // let admin;
 //mongoose connect
 mongoose
-  .connect("mongodb://localhost:27017/school", {
+  .connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -51,7 +51,7 @@ app.use(cors());
 
 //storing session in mongoose
 const store = new MongoDBStore({
-  mongoUrl: "mongodb://localhost:27017/school",
+  mongoUrl: dbUrl,
   secret: "thisshouldbeabettersecret!",
   touchAfter: 60,
 });
